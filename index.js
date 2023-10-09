@@ -12,6 +12,20 @@ app.all('/', (req, res) => {
     res.send('Yo!')
 })
 
+const smsData = []
+
+app.get('/api/receivesms', async (req, res) => {
+    try {
+        return res.status(200).json({sms: smsData.reverse() })
+    }
+    catch (err) {
+        return res.status(500).json({
+            success: false,
+            msg: "some error occured returning sms data"
+        })
+    }
+});
+
 
 app.post("/api/receivesms", async (req, res, next)=>{
     try {
