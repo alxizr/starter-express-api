@@ -8,7 +8,7 @@ app.all('/', (req, res) => {
 
 app.post("/api/receivesms", async (req, res, next)=>{
     try {
-        const body = await req.json()
+        const body = await req.body
         console.log(body)
         return res.status(200).json({body})
     }
