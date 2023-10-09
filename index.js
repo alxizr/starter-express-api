@@ -9,6 +9,7 @@ app.all('/', (req, res) => {
 app.post("/api/receivesms", async (req, res, next)=>{
     try {
         const body = await req.json()
+        console.log(body)
         return res.status(200).json({body})
     }
     catch (err) {
